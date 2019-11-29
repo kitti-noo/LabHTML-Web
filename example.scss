@@ -1,0 +1,156 @@
+$white: #fff;
+$black: #000;
+$blue: #117bff;
+$eighty: 80px;
+$fifty: 50px;
+@mixin transition {
+	-webkit-transition: background .5s;
+	-o-transition: background .5s;
+	transition: background .5s;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+}
+.container {
+	margin: 0 auto;
+	max-width: 940px;
+	padding: 0 10px;
+}
+.header {
+	background: url("bg.jpg") no-repeat center center;
+	background-size: cover;
+	height: 600px;
+	text-align: center;
+	.container {
+		position: relative;
+		top: $fifty;
+	}
+	h1 {
+		color: $white;
+		line-height: 200px;
+		font-size: $fifty;
+		margin-top: 0;
+		margin-bottom: $eighty;
+		text-transform: uppercase;
+	}
+	p {
+		color: $white;
+		font-weight: 500;
+		letter-spacing: 8px;
+		margin-bottom: 40px;
+		margin-top: 0;
+		text-transform: uppercase;
+	}
+}
+.btn {
+	color: $white;
+	background: $blue;
+	padding: 10px 40px;
+	text-decoration: none;
+	@include transition;
+	&:hover {
+		background: $blue;
+		cursor: pointer;
+		@include transition;
+	}
+}
+.nav {
+	background: $black;
+	height: $eighty;
+	width: 100%;
+	ul {
+		height: $eighty;
+		list-style: none;
+		margin: 0 auto;
+		padding: 0;
+		li {
+			color: $white;
+			display: inline-block;
+			height: $eighty;
+			line-height: $eighty;
+			list-style: none;
+			padding: 0 10px;
+			@include transition;
+			&:hover {
+				background: $blue;
+				cursor: pointer;
+				@include transition;
+			}
+		}
+	}
+} 
+.main {
+	.container {
+		margin: $eighty auto;
+	}
+	img {
+		float: left;
+		margin: $fifty $eighty $fifty 0;
+	}
+}
+.jumbotron {
+	background: url("jumbotron_bg.jpg") no-repeat center center;
+	background-size: cover;
+	height: 400px;
+	.container {
+		position: relative;
+		top: 220px;
+	}
+	h2 {
+		color: $white;
+		text-align: right;
+	}
+	p {
+		color: $white;
+		text-align: right;
+	}
+	.btn {
+		margin: 10px 0 0;
+		float: right;
+	}
+}
+.footer {
+	background: $black;
+	height: $eighty;
+	padding-bottom: $fifty;
+	p {
+		color: $white;
+		font-size: 14px;
+		height: $eighty;
+		line-height: $eighty;
+		margin: 0;
+	}
+}
+@media (min-width: 850px) {
+	.header {
+		h1 {
+			font-size: 120px;
+		}
+	}
+}
+@media (max-width: 500px) {
+	.header {
+		h1 {
+			font-size: $fifty;
+			line-height: 64px;
+		}
+	}
+	.main {
+		padding: 0 30px;
+		img {
+			width: 100%;
+		}
+	}
+	.jumbotron {
+		padding: 0 30px;
+	}
+}
